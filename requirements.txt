@@ -1,0 +1,8 @@
+Django==2.2
+mysqlclient
+django-mysql
+psycopg2-binary
+djangomako==1.1.1
+djangorestframework
+mysql-connector-python
+

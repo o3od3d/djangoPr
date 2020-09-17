@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_DATABASE: "lob"
+      MYSQL_USER: "o3od3d"
+      MYSQL_PASSWORD: "1234"
+    ports:
+      - "3315:3306"
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/djangoPro
+    ports:
+      - "8005:8000"
+    depends_on:
+      - db

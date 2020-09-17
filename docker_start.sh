@@ -1,0 +1,1 @@
+/etc/init.d/nginx start & uwsgi --socket /tmp/djangoPro.sock --module djangoPro.wsgi --chmod-socket=666
