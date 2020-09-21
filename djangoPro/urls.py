@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 from lob import views
-from django.conf.urls import include,url
+from django.conf.urls import include, url
+
 router = routers.DefaultRouter()
-router.register(r'board',views.BoardViewset)
+router.register(r'board', views.BoardViewset)
+router.register(r'food',views.FoodViewset)
 urlpatterns = [
-    url(r'^',include(router.urls)),
-    url(r'^api-auth/',include('rest_framework.urls',namespace='rest_framework')),
-    #path('admin/', admin.site.urls),
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # path('admin/', admin.site.urls),
 ]
