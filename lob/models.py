@@ -1,5 +1,6 @@
 from django.db import models
 class Board(models.Model):
+    board_id = models.AutoField(primary_key=True)
     board_title = models.CharField(max_length=200)
     board_contents = models.TextField()
     board_writer = models.CharField(max_length=200)
@@ -24,7 +25,7 @@ class Basket(models.Model):
     basket_reservationTime = models.TimeField()
     basket_info = models.IntegerField()
 
-class Calender(models.Model):
-    calender_date = models.DateTimeField()
+class Calendar(models.Model):
+    calendar_date = models.DateTimeField()
     food_name = models.CharField(max_length=100)
     food_expirationDate = models.DateTimeField()

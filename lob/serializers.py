@@ -1,11 +1,11 @@
-from .models import Board, Food, Basket, User, Calender
+from .models import Board, Food, Basket, User, Calendar
 from rest_framework import serializers
 
 
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
-        fields = ('board_title', 'board_contents', 'board_writer', 'board_date')
+        fields = ('board_id','board_title', 'board_contents', 'board_writer', 'board_date')
 
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('user_email', 'user_name', 'user_profile', 'user_rating')
 
-class CalenderSerializer(serializers.ModelSerializer):
+class CalendarSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Calender
-        fields = ('calender_date', 'food_name', 'food_expirationDate')
+        model = Calendar
+        fields = ('calendar_date', 'food_name', 'food_expirationDate')
