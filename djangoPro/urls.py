@@ -22,6 +22,9 @@ from django.conf.urls import include, url
 router = routers.DefaultRouter()
 router.register(r'board', views.BoardViewset)
 router.register(r'food',views.FoodViewset)
+router.register(r'basket',views.BasketViewset)
+router.register(r'user',views.UserViewset)
+router.register(r'calender',views.CalenderViewset)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
