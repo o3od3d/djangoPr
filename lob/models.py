@@ -29,3 +29,10 @@ class Calendar(models.Model):
     calendar_date = models.DateTimeField()
     food_name = models.CharField(max_length=100)
     food_expirationDate = models.DateTimeField()
+
+class Comment(models.Model):
+    comment_id = models.AutoField(primary_key=True)
+    board_id = models.ForeignKey(Board, on_delete=models.CASCADE)
+    comment_contents = models.TextField()
+    comment_writer = models.CharField(max_length=200)
+    comment_date = models.DateTimeField(auto_now_add=True)

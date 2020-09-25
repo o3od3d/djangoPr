@@ -25,6 +25,7 @@ router.register(r'food',views.FoodViewset)
 router.register(r'basket',views.BasketViewset)
 router.register(r'user',views.UserViewset)
 router.register(r'calendar',views.CalendarViewset)
+router.register(r'comment',views.CommentViewset)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

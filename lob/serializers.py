@@ -1,4 +1,4 @@
-from .models import Board, Food, Basket, User, Calendar
+from .models import Board, Food, Basket, User, Calendar, Comment
 from rest_framework import serializers
 
 
@@ -26,3 +26,8 @@ class CalendarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Calendar
         fields = ('calendar_date', 'food_name', 'food_expirationDate')
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ('comment_id', 'board_id', 'comment_contents', 'comment_writer', 'comment_date')

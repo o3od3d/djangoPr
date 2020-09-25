@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import BoardSerializer, FoodSerializer, BasketSerializer, CalendarSerializer, UserSerializer
-from .models import Board, Food, Basket, User, Calendar
+from .serializers import BoardSerializer, FoodSerializer, BasketSerializer, CalendarSerializer, UserSerializer, CommentSerializer
+from .models import Board, Food, Basket, User, Calendar, Comment
 
 
 class BoardViewset(viewsets.ModelViewSet):
@@ -23,3 +23,7 @@ class BasketViewset(viewsets.ModelViewSet):
 class CalendarViewset(viewsets.ModelViewSet):
     queryset = Calendar.objects.all()
     serializer_class = CalendarSerializer
+
+class CommentViewset(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
