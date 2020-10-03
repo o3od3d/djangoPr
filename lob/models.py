@@ -17,7 +17,7 @@ class Food(models.Model):
     food_expirationDate = models.DateTimeField(default=timezone)
     food_info = models.IntegerField()
     food_remainDate = models.DateTimeField(default=timezone)
-    food_img = models.ImageField()
+    food_img = models.ImageField(upload_to='images/',blank=True, null=True)
 
 class User(models.Model):
     user_email = models.CharField(max_length=50)
