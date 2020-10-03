@@ -1,6 +1,7 @@
 from .models import Board, Food, Basket, User, Calendar, Comment
 from rest_framework import serializers
-
+from datetime import date, datetime
+from django import forms
 
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,7 +11,9 @@ class BoardSerializer(serializers.ModelSerializer):
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
-        fields = ('food_name', 'food_recodeDate', 'food_expirationDate','food_info', 'food_remainDate', 'food_img')
+        fields = ('food_name', 'food_recodeDate', 'food_expirationDate','food_info', 'food_remainDate','food_img')
+
+
 
 class BasketSerializer(serializers.ModelSerializer):
     class Meta:

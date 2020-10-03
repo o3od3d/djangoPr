@@ -1,4 +1,9 @@
+from datetime import timezone
+
 from django.db import models
+from rest_framework.settings import api_settings
+
+
 class Board(models.Model):
     board_id = models.AutoField(primary_key=True)
     board_title = models.CharField(max_length=200)
@@ -9,10 +14,10 @@ class Board(models.Model):
 class Food(models.Model):
     food_name = models.CharField(max_length=100)
     food_recodeDate = models.DateTimeField(auto_now_add=True)
-    food_expirationDate = models.DateTimeField()
+    food_expirationDate = models.DateTimeField(default=timezone)
     food_info = models.IntegerField()
-    food_remainDate = models.DateTimeField()
-    food_img = models.ImageField
+    food_remainDate = models.DateTimeField(default=timezone)
+    food_img = models.ImageField()
 
 class User(models.Model):
     user_email = models.CharField(max_length=50)

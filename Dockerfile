@@ -12,7 +12,7 @@ RUN apt-get update -y && \
 RUN pip3 install django uwsgi
 RUN pip3 install djangorestframework
 RUN pip3 install mysqlclient
-
+RUN pip3 install pillow
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm -rf /etc/nginx/sites-enabled/default
 COPY mysite_nginx.conf /etc/nginx/sites-enabled/mysite_nginx.conf
