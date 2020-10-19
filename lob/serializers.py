@@ -11,14 +11,12 @@ class BoardSerializer(serializers.ModelSerializer):
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
-        fields = ('food_name', 'food_recodeDate', 'food_expirationDate','food_info', 'food_remainDate','food_img')
-
-
+        fields = ('food_id', 'user_email','food_name', 'food_recodeDate', 'food_expirationDate','food_info', 'food_remainDate','food_img')
 
 class BasketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Basket
-        fields = ('basket_contents', 'basket_reservationTime', 'basket_info')
+        fields = ('basket_id', 'basket_contents', 'basket_reservationTime', 'basket_info')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
